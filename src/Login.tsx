@@ -1,4 +1,4 @@
-import { VStack, Image, Text, Box, FormControl, Input, Button, Link, useToast } from 'native-base'
+import { VStack, Image, Text, Box, Link, useToast } from 'native-base'
 import { TouchableOpacity } from "react-native";
 import { Titulo } from "./componentes/Titulo";
 import { Botao } from './componentes/Botao';
