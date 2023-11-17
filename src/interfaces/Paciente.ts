@@ -1,5 +1,3 @@
-
-
 export interface Paciente {
     cpf: string;
     nome: string;
@@ -10,12 +8,12 @@ export interface Paciente {
     possuiPlanoSaude: boolean;
     planosSaude?: number[];
     imagem?: string;
-}
-
-export interface Endereco{
+  }
+  
+  export interface Endereco {
     cep: string;
-    rua:string;
+    rua: string;
     numero: number;
     complemento?: string;
     estado: string;
-}
+  }
