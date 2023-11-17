@@ -26,7 +26,7 @@ export function EntradaTexto ({
         bgColor="gray.100"
         secureTextEntry={secureTextEntry}
         shadow={3}
-        value ={value}
+        value={value}
         onChangeText={onChangeText}
       />
     </FormControl>

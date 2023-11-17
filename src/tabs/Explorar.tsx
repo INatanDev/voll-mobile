@@ -4,23 +4,23 @@ import { CardConsulta } from "../componentes/CardConsulta";
 import { EntradaTexto } from "../componentes/EntradaTexto";
 import { Titulo } from "../componentes/Titulo";
 import { useState } from "react";
-import { buscarEspecialistaPorEstado } from "../servicos/Especialista";
+import { buscarEspecialistaPorEstado } from "../servicos/EspecialistaServico";
 import { NavigationProps } from "../@types/navigation";
 
-interface Especialista{
-  nome: string;
-  imagem: string;
-  especialidade: string;
+interface Especialista {
+  nome: string,
+  imagem: string,
+  especialidade: string,
   id: string;
 }
 
-export default function Explorar({navigation} : NavigationProps<'Explorar'> ){
+export default function Explorar({ navigation }: NavigationProps<'Explorar'>){
   const [estado, setEstado] = useState('')
   const [especialidade, setEspecialidade] = useState('')
   const [resultadoBusca, setResultadoBusca] = useState([])
 
-  async function buscar() {
-    if(!estado || !especialidade)return null
+  async function buscar(){
+    if(!estado || !especialidade) return null
     const resultado = await buscarEspecialistaPorEstado(estado, especialidade)
     if(resultado){
       setResultadoBusca(resultado)
@@ -54,7 +54,9 @@ export default function Explorar({navigation} : NavigationProps<'Explorar'> ){
               especialidade={especialista.especialidade}
               foto={especialista.imagem}
               nome={especialista.nome}
-              onPress={() => navigation.navigate('Agendamento', {especialistaId: especialista.id})}
+              onPress={() => navigation.navigate('Agendamento', {
+                especialistaId: especialista.id
+              })}
             />
           </VStack>
         ))}
